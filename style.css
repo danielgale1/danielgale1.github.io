@@ -1,0 +1,54 @@
+/* Daniel Gale portfolio — styles & animations */
+body{margin:0;background:#FBF7EE}
+a{color:#111111;text-decoration:none}a:hover{color:#C2361A}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@keyframes rise{from{opacity:0;translate:0 40px}to{opacity:1;translate:0 0}}
+@keyframes pop{0%{opacity:0;scale:.86}70%{opacity:1;scale:1.03}100%{opacity:1;scale:1}}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -12px}}
+@keyframes spin{to{rotate:360deg}}
+@keyframes blob{0%,100%{border-radius:58% 42% 50% 50%/46% 55% 45% 54%}33%{border-radius:46% 54% 42% 58%/56% 44% 56% 44%}66%{border-radius:54% 46% 58% 42%/44% 58% 42% 56%}}
+@keyframes marquee{to{translate:-50% 0}}
+@keyframes wave{0%,100%{rotate:0deg}25%{rotate:-5deg}75%{rotate:3deg}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.rise{animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+.d1{animation-delay:.05s}.d2{animation-delay:.2s}.d3{animation-delay:.35s}.d4{animation-delay:.5s}.d5{animation-delay:.65s}.d6{animation-delay:.8s}
+.pop{animation:pop 1s cubic-bezier(.2,.8,.2,1) .25s both}
+.float{animation:float 4s ease-in-out infinite}
+.float-b{animation:float 5.5s ease-in-out 1s infinite}
+.spin{animation:spin 16s linear infinite}
+.blob{animation:blob 12s ease-in-out infinite}
+.wave{display:inline-block;transform-origin:20% 80%;animation:wave 3s ease-in-out 1.2s infinite}
+.blink{animation:blink 1.6s ease-in-out infinite}
+.marquee{display:flex;width:max-content;animation:marquee 32s linear infinite}
+.marquee-wrap:hover .marquee{animation-play-state:paused}
+.lift{transition:translate .25s ease,box-shadow .25s ease}
+.lift:hover{translate:-4px -6px;box-shadow:14px 14px 0 #111111 !important}
+.lift img{transition:scale .6s ease}
+.lift:hover img{scale:1.03}
+.poster{transition:transform .35s ease,scale .35s ease;position:relative}
+.poster:hover{transform:rotate(0deg) !important;scale:1.05;z-index:2}
+.tile{transition:translate .2s ease,box-shadow .2s ease}
+.tile:hover{translate:0 -5px;box-shadow:0 5px 0 #111111}
+.btn{transition:translate .15s ease,box-shadow .15s ease}
+.btn:hover{translate:-2px -2px;box-shadow:6px 6px 0 #F25C3B !important}
+.svc{transition:translate .25s ease}
+.svc:hover{translate:0 -6px}
+.svc:hover .svc-icon{animation:wave .6s ease-in-out}
+@supports (animation-timeline: view()){
+.reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 90%}
+}
+@media (prefers-reduced-motion: reduce){
+*,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+}
+
+/* ---------- Phones & small tablets ---------- */
+@media (max-width: 760px){
+  .nav-links{order:3;width:100%;flex-wrap:nowrap !important;overflow-x:auto;gap:18px !important;font-size:12px !important;padding-bottom:4px;scrollbar-width:none}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{white-space:nowrap}
+  .hero-photo{order:0 !important;min-height:400px !important}
+  .hero-name{font-size:96px !important}
+  .fab{padding:12px !important;min-height:56px;min-width:56px;justify-content:center}
+  .fab-label{display:none}
+}
