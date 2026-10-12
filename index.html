@@ -8,13 +8,14 @@
   <meta property="og:title" content="Daniel Gale | Web, Marketing &amp; Automation">
   <meta property="og:description" content="I build websites, then I set up everything that happens after someone lands on one.">
   <meta property="og:image" content="images/work/elite-d1.jpg">
-  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="icon" href="images/favicon.svg?v=2" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png?v=2">
   <meta name="theme-color" content="#1C1C22">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat+Brush&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})();</script>
 </head>
 <body>
 <div style="font-family: 'Work Sans', system-ui, sans-serif; color: #111111; background: #FBF7EE; min-height: 100vh; overflow: hidden">
@@ -32,7 +33,10 @@
 <a href="#about">About</a>
 <a href="#contact">Contact</a>
 </nav>
+<div style="display: flex; align-items: center; gap: 12px">
+<button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Light / dark mode"><svg class="sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"></circle><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg><svg class="moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 019.5 4a8 8 0 1010.5 10.5z"></path></svg></button>
 <a class="btn" href="#contact" style="border: 2px solid #111111; border-radius: 999px; padding: 10px 22px; font-weight: 800; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; min-height: 44px; display: inline-flex; align-items: center; gap: 8px; background: #FFFFFF"><span class="blink" style="width: 8px; height: 8px; border-radius: 50%; background: #2BB673"></span>Available</a>
+</div>
 </header>
 
 <!-- HERO -->
@@ -402,5 +406,6 @@ Back to top</a>
 </footer>
 
 </div>
+<script>document.querySelector('.theme-toggle').addEventListener('click',function(){var r=document.documentElement,t=r.getAttribute('data-theme')==='dark'?'light':'dark';r.setAttribute('data-theme',t);try{localStorage.setItem('theme',t)}catch(e){}});</script>
 </body>
 </html>
